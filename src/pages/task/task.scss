@@ -1,0 +1,56 @@
+page-task {
+    .bg{
+        opacity: 0.5;
+      -webkit-filter: blur(7px);
+    }
+    .card {
+        width: 86%;
+    height: 80%;
+    padding: 45px 74px;
+    text-align: center;
+    background: #faac83;
+    margin-left: 7%;
+    margin-top: 20%;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .input{
+        width: 173%;
+        left: -35%;
+        border-radius: 10px;
+    }
+    .select{
+    width: 173%;
+    left: -35%;
+    border-radius: 10px;
+    margin-top: 10px;
+    }
+    .text-area{
+    width: 173%;
+    height: 100%;
+    left: -35%;
+    border-radius: 10px;
+    margin-top: 10px;
+    }
+    ion-item,ion-select{
+        padding:0px;
+    }
+    ion-item,ion-select,ion-option{
+        max-width: 200%;
+    }
+    ion-item,ion-textarea{
+        max-width: 200%;
+    }
+
+    .date{
+        width: 173%;
+    left: -35%;
+    border-radius: 10px;
+    margin-top: 10px;
+    }
+
+    button{
+        display: block;
+    }
+}

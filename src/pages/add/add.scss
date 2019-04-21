@@ -1,0 +1,15 @@
+page-add {
+img {
+        max-width: 49%;
+        border: 0;
+        margin-left: 2px;
+        margin-right: -5px;
+        margin-top: -5px;
+        transition: transform .2s;
+    }
+    img:active{
+        transform: scale(1.5)
+    }
+
+
+}
