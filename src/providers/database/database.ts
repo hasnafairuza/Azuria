@@ -71,6 +71,16 @@ return response;
     return response;
       }
 
+      getTask(){
+        return this.http.get("http://localhost/azuria_db/getTask.php")
+               .map((response:Response)=> response.json());
+      }
+
+      getTotal(){
+        return this.http.get("http://localhost/azuria_db/getTotal.php")
+               .map((response:Response)=> response.json());
+      }
+
     
 
 }
