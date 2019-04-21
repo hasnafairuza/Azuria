@@ -22,12 +22,12 @@
 ">Add a new task</div><br>
   <ion-list>
       <ion-item class="input">
-        <ion-input placeholder="Enter title" [(ngModel)]="label"></ion-input>
+        <ion-input placeholder="Enter title" [(ngModel)]="title"></ion-input>
       </ion-item>
 
       <ion-item class="select">
           <!-- <ion-label placeholder="Select Type"></ion-label> -->
-          <ion-select [(ngModel)]="Gaming" style="width:100%" placeholder="Select Type">
+          <ion-select [(ngModel)]="type" style="width:100%" placeholder="Select Type">
             <ion-option value="nes">Miscellaneous</ion-option>
             <ion-option value="n64">Attire & Accessories</ion-option>
             <ion-option value="ps">Healty & Beauty</ion-option>
@@ -38,15 +38,15 @@
         </ion-item>
 
         <ion-item class="text-area">
-          <ion-textarea placeholder="Details"></ion-textarea>
+          <ion-textarea placeholder="Details" [(ngModel)]="detail"></ion-textarea>
         </ion-item>
 
         <ion-item class="date">
             <ion-label>Date</ion-label>
-            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="date"></ion-datetime>
           </ion-item>
           <br>
-          <button ion-button color="light" round full (click)="add()">ADD</button>
+          <button ion-button color="light" round full (click)="addTask(title, type, detail, date)">ADD</button>
           <button ion-button color="dark" round full (click)="cancle()">CANCLE</button>
 
   </ion-list>

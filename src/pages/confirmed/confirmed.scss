@@ -1,3 +1,40 @@
 page-confirmed {
-
+    .bg{
+        opacity: 0.5;
+      -webkit-filter: blur(7px);
+    }
+    .card {
+        width: 86%;
+    height: 80%;
+    padding: 45px 74px;
+    text-align: center;
+    // background-image: url("../../assets/imgs/bgtask.png");
+    background: #f19cd3;
+    margin-left: 7%;
+    margin-top: 20%;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: auto;
+    }
+    ion-icon{
+        display: inline-block;
+    font-size: 3.2em;
+    color: white;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+    position: absolute;
+    }
+    .item{
+        width: 160%;
+    left: -50px;
+    border-radius: 15px;
+    top:30px;
+    }
+    .list{
+        display: contents;
+    }
 }
+
+

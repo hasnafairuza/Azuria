@@ -11,44 +11,24 @@
 </ion-header> -->
 <!-- <ion-icon name="close-circle-outline" style="font-size:22px;color:white"></ion-icon> -->
 <ion-content class="bg">
-</ion-content>
-<div class="card">
-  <ion-icon name="md-add-circle" style="font-size: 250%;color: white;"></ion-icon>
-
-  <div style="
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-">Add a new task</div><br>
-  <ion-list>
-      <ion-item class="input">
-        <ion-input placeholder="Enter name" [(ngModel)]="label"></ion-input>
-      </ion-item>
-
-      <ion-item class="select">
-          <!-- <ion-label placeholder="Select Type"></ion-label> -->
-          <ion-select [(ngModel)]="Gaming" style="width:100%" placeholder="Select Type">
-            <ion-option value="nes">Miscellaneous</ion-option>
-            <ion-option value="n64">Attire & Accessories</ion-option>
-            <ion-option value="ps">Healty & Beauty</ion-option>
-            <ion-option value="genesis">Music & Show</ion-option>
-            <ion-option value="saturn">Flowers & Decor</ion-option>
-            <ion-option value="snes">Accessories</ion-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item class="text-area">
-          <ion-textarea placeholder="Details"></ion-textarea>
-        </ion-item>
-
-        <ion-item class="date">
-            <ion-label>Date</ion-label>
-            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-          </ion-item>
-          <br>
-          <button ion-button color="light" round full (click)="add()">ADD</button>
-          <button ion-button color="dark" round full (click)="cancle()">CANCLE</button>
-
-  </ion-list>
-<!-- {{userid}} -->
-</div>
+  </ion-content>
+  <div class="card">
+      <ion-icon ios="ios-close-circle" md="md-close-circle" (click)="close()"></ion-icon>
+  
+      <ion-list *ngFor="let item of tasksData">
+          <ion-item>
+              <ion-row>
+                  <ion-col>
+                      <div style="font-size: 13px;opacity: 0.5;">Title</div>
+                          {{item.t_title}}
+                  </ion-col>
+                  <ion-col>
+                      <div style="font-size: 13px;opacity: 0.5;">Date</div>
+                          {{item.t_date}}
+                  </ion-col>
+              </ion-row>
+          </ion-item><br>
+      </ion-list>
+  
+  
+  </div>

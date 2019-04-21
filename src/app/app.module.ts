@@ -22,6 +22,8 @@ import { GuestPage } from '../pages/guest/guest';
 import { ConfirmedPage } from '../pages/confirmed/confirmed';
 import { VendorPage } from '../pages/vendor/vendor';
 import { ReservedPage } from '../pages/reserved/reserved';
+import { DatabaseProvider } from '../providers/database/database';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { ReservedPage } from '../pages/reserved/reserved';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -70,7 +73,8 @@ import { ReservedPage } from '../pages/reserved/reserved';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider
   ]
 })
 export class AppModule {}

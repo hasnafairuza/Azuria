@@ -21,7 +21,7 @@ export class CompletedPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompletedPage');
   }
-  cancle(){
+  close(){
     this.viewCtrl.dismiss();
   }
 

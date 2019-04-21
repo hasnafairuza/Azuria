@@ -22,12 +22,12 @@
 ">Add a new cost</div><br>
   <ion-list>
       <ion-item class="input">
-        <ion-input placeholder="Enter title" [(ngModel)]="label"></ion-input>
+        <ion-input placeholder="Enter title" [(ngModel)]="title"></ion-input>
       </ion-item>
 
       <ion-item class="select">
           <!-- <ion-label placeholder="Select Type"></ion-label> -->
-          <ion-select [(ngModel)]="Gaming" style="width:100%" placeholder="Select Type">
+          <ion-select [(ngModel)]="type" style="width:100%" placeholder="Select Type">
             <ion-option value="nes">Miscellaneous</ion-option>
             <ion-option value="n64">Attire & Accessories</ion-option>
             <ion-option value="ps">Healty & Beauty</ion-option>
@@ -38,14 +38,14 @@
         </ion-item>
 
         <ion-item class="text-area">
-          <ion-textarea placeholder="Details"></ion-textarea>
+          <ion-textarea placeholder="Details" [(ngModel)]="detail"></ion-textarea>
         </ion-item>
 
         <ion-item class="number">
-          <ion-input type="number" placeholder="Estimate amount"></ion-input>
+          <ion-input type="number" placeholder="Estimate amount" [(ngModel)]="amount"></ion-input>
         </ion-item>
           <br>
-          <button ion-button color="light" round full (click)="add()">ADD</button>
+          <button ion-button color="light" round full (click)="addTotal(title, type, detail, amount)">ADD</button>
           <button ion-button color="dark" round full (click)="cancle()">CANCLE</button>
 
   </ion-list>

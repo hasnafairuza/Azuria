@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import { AlertController,IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import {DatabaseProvider} from '../../providers/database/database';
 
 /**
  * Generated class for the VendorPage page.
@@ -15,7 +16,9 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 })
 export class VendorPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
+    private db:DatabaseProvider,
+    private alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -24,5 +27,39 @@ export class VendorPage {
   cancle(){
     this.viewCtrl.dismiss();
   }
+  
+  addVendor(name, type, detail, phone, email, address, amount){
+    this.db.addVendor(name, type, detail, phone, email, address, amount).subscribe(data=>{
+      console.log(data)
+      if(data.status == 'success'){
+
+      let alert = this.alertCtrl.create({
+        title: "Info",
+        subTitle: "Add Success",
+        buttons:[{
+          text:"OK",
+          handler: data =>{
+            this.viewCtrl.dismiss();
+          }
+        }]
+      })
+      alert.present();
+    }else{
+      let alert = this.alertCtrl.create({
+        title: "Info",
+        subTitle: "Add Fail",
+        buttons:[{
+          text:"OK",
+          handler: data =>{
+            this.viewCtrl.dismiss();
+          }
+        }]
+      })
+      alert.present();
+    }
+
+    })
+
+    }
 
 }
