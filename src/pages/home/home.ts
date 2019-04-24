@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
+import { SetDatePage } from '../set-date/set-date';
 
 @Component({
   selector: 'page-home',
@@ -7,11 +8,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
    
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController) {
     // this.countDown();
   }
 
   countDown(){
+    let profileModal = this.modalCtrl.create(SetDatePage, { userId: 8675309 });
+    profileModal.present();
     var hicon = '<img src="../../assets/imgs/hi.png" alt="" width="10px" style="top:60px;position: positive;">';
     var hgif = '<img src="../../assets/imgs/wedding.gif" alt="">';
     var m = "May";

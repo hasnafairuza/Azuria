@@ -1,8 +1,1 @@
-
-
-    <preference name="FadeSplashScreenDuration" value="300" />
-
-
-    <preference name="SplashScreenDelay" value="1000" />
-    <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="ShowSplashScreen" value="true" />
+<?xml version='1.0' encoding='utf-8'?>
