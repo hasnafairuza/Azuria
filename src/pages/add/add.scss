@@ -5,9 +5,10 @@ img {
     margin-left: 1.5px;
     margin-right: -1.5px;
     margin-top: -1.5px;
+    transition: transform .2s;
     }
     img:active{
-        transform: scale(1.5)
+         transform: scale(1.5)
     }
     .bg{
         background-color: #d5676a;

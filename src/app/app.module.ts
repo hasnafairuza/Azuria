@@ -24,6 +24,10 @@ import { VendorPage } from '../pages/vendor/vendor';
 import { ReservedPage } from '../pages/reserved/reserved';
 import { DatabaseProvider } from '../providers/database/database';
 import { HttpModule } from '@angular/http';
+import { TaskListPage } from '../pages/task-list/task-list';
+import { BudgetListPage } from '../pages/budget-list/budget-list';
+import { GuestListPage } from '../pages/guest-list/guest-list';
+import { VendorListPage } from '../pages/vendor-list/vendor-list';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { HttpModule } from '@angular/http';
     GuestPage,
     ConfirmedPage,
     VendorPage,
-    ReservedPage
+    ReservedPage,
+    TaskListPage,
+    BudgetListPage,
+    GuestListPage,
+    VendorListPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +76,11 @@ import { HttpModule } from '@angular/http';
     GuestPage,
     ConfirmedPage,
     VendorPage,
-    ReservedPage
+    ReservedPage,
+    TaskListPage,
+    BudgetListPage,
+    GuestListPage,
+    VendorListPage
   ],
   providers: [
     StatusBar,

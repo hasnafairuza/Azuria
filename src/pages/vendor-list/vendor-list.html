@@ -1,15 +1,30 @@
 <!--
-  Generated template for the VendorListPage page.
+  Generated template for the TaskCompletedPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>vendorList</ion-title>
+    <ion-title>Reserved Vendor</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of vendorList">
+            <ion-row>
+                <ion-col>
+                    <div style="font-size: 13px;opacity: 0.5;">Name</div>
+                        {{item.v_name}}
+                </ion-col>
+                <ion-col>
+                    <div style="font-size: 13px;opacity: 0.5;">Phone</div>
+                        {{item.v_phone}}
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+       
+   
 </ion-content>

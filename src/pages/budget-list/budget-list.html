@@ -1,15 +1,30 @@
 <!--
-  Generated template for the BudgetListPage page.
+  Generated template for the TaskCompletedPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>budgetList</ion-title>
+    <ion-title>Used Budget</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of budgetList">
+            <ion-row>
+                <ion-col>
+                    <div style="font-size: 13px;opacity: 0.5;">Title</div>
+                        {{item.c_title}}
+                </ion-col>
+                <ion-col>
+                    <div style="font-size: 13px;opacity: 0.5;">Amound</div>
+                        {{item.c_amount}}
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+       
+   
 </ion-content>

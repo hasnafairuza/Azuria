@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoadingController,IonicPage, NavController, NavParams } from 'ionic-angular';
+import {DatabaseProvider} from '../../providers/database/database';
 
 /**
  * Generated class for the VendorListPage page.
@@ -14,12 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'vendor-list.html',
 })
 export class VendorListPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  vendorList:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private db:DatabaseProvider,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VendorListPage');
+    this.getVendorLists()
+  }
+
+  getVendorLists() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present()
+    this.db.getVendorList().subscribe(data=>{
+      this.vendorList = data;
+      console.log(data)
+      loading.dismiss();
+    })
   }
 
 }

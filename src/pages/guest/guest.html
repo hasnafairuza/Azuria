@@ -26,7 +26,7 @@
 
       <ion-item class="input">
         <ion-input placeholder="First name" [(ngModel)]="fname"></ion-input>
-      </ion-item>
+      </ion-item><br>
 
         <ion-item class="input">
           <ion-input placeholder="Last name" [(ngModel)]="lname"></ion-input>
@@ -35,8 +35,8 @@
       <ion-item class="select">
           <!-- <ion-label placeholder="Select Type"></ion-label> -->
           <ion-select [(ngModel)]="sex" style="width:100%" placeholder="Select Gender">
-            <ion-option value="nes">Male</ion-option>
-            <ion-option value="n64">Female</ion-option>
+            <ion-option value="Male">Male</ion-option>
+            <ion-option value="Female">Female</ion-option>
           </ion-select>
         </ion-item>
 
@@ -60,7 +60,6 @@
             <ion-input placeholder="Address" [(ngModel)]="address"></ion-input>
           </ion-item>
          <br>
->
           <button ion-button color="light" round full (click)="addGuest(fname, lname, sex, detail, phone, email, address)">ADD</button>
           <button ion-button color="dark" round full (click)="cancle()">CANCLE</button>
           

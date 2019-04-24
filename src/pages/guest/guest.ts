@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController,IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import {  LoadingController,AlertController,IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import {DatabaseProvider} from '../../providers/database/database';
 
 /**
@@ -17,8 +17,7 @@ import {DatabaseProvider} from '../../providers/database/database';
 export class GuestPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-    private db:DatabaseProvider,
-    private alertCtrl:AlertController) {
+    private db:DatabaseProvider,private alertCtrl:AlertController,public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -29,6 +28,10 @@ export class GuestPage {
   }
 
   addGuest(fname, lname, sex, detail, phone, email, address){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present()
     this.db.addGuest(fname, lname, sex, detail, phone, email, address).subscribe(data=>{
       console.log(data)
       if(data.status == 'success'){
@@ -39,6 +42,7 @@ export class GuestPage {
         buttons:[{
           text:"OK",
           handler: data =>{
+            loading.dismiss();
             this.viewCtrl.dismiss();
           }
         }]
@@ -51,6 +55,7 @@ export class GuestPage {
         buttons:[{
           text:"OK",
           handler: data =>{
+            loading.dismiss();
             this.viewCtrl.dismiss();
           }
         }]

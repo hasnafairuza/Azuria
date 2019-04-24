@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoadingController,IonicPage, NavController, NavParams } from 'ionic-angular';
+import {DatabaseProvider} from '../../providers/database/database';
 
 /**
  * Generated class for the BudgetListPage page.
@@ -14,12 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'budget-list.html',
 })
 export class BudgetListPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  budgetList:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private db:DatabaseProvider,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BudgetListPage');
+    this.getBudgetLists();
+  }
+
+  getBudgetLists() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present()
+    this.db.getBudgetList().subscribe(data=>{
+      this.budgetList = data;
+      console.log(data)
+      loading.dismiss();
+    })
   }
 
 }

@@ -14,9 +14,9 @@
   </ion-content>
   <div class="card">
       <ion-icon ios="ios-close-circle" md="md-close-circle" (click)="close()"></ion-icon>
-  
+  <div *ngIf="!dataNull">
       <ion-list *ngFor="let item of totalData">
-          <ion-item>
+          <ion-item (click)="presentActionSheet(item.c_id)">
               <ion-row>
                   <ion-col>
                       <div style="font-size: 13px;opacity: 0.5;">Title</div>
@@ -29,6 +29,14 @@
               </ion-row>
           </ion-item><br>
       </ion-list>
+    </div>
+      <ion-item *ngIf="dataNull">
+        <ion-row>
+            <ion-col style="text-align:center">
+                No task list!!
+            </ion-col>
+        </ion-row>
+    </ion-item>
   
   
   </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController,IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import {  LoadingController,AlertController,IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import {DatabaseProvider} from '../../providers/database/database';
 
 /**
@@ -17,8 +17,7 @@ import {DatabaseProvider} from '../../providers/database/database';
 export class TotalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-    private db:DatabaseProvider,
-    private alertCtrl:AlertController) {
+    private db:DatabaseProvider,private alertCtrl:AlertController,public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -29,9 +28,14 @@ export class TotalPage {
   }
 
   addTotal(title, type, detail, amount){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present()
     this.db.addTotal(title, type, detail, amount).subscribe(data=>{
       console.log(data)
       if(data.status == 'success'){
+        loading.dismiss();
 
       let alert = this.alertCtrl.create({
         title: "Info",
@@ -39,18 +43,21 @@ export class TotalPage {
         buttons:[{
           text:"OK",
           handler: data =>{
+            loading.dismiss();
             this.viewCtrl.dismiss();
           }
         }]
       })
       alert.present();
     }else{
+      loading.dismiss();
       let alert = this.alertCtrl.create({
         title: "Info",
         subTitle: "Add Fail",
         buttons:[{
           text:"OK",
           handler: data =>{
+            loading.dismiss();
             this.viewCtrl.dismiss();
           }
         }]

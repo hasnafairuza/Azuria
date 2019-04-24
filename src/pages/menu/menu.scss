@@ -4,5 +4,9 @@ page-menu {
     }
     img{
         display: block;
+        transition: transform .2s;
+    }
+    img:active{
+        transform: scale(1.5)
     }
 }

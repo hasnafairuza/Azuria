@@ -11,24 +11,32 @@
 </ion-header> -->
 <!-- <ion-icon name="close-circle-outline" style="font-size:22px;color:white"></ion-icon> -->
 <ion-content class="bg">
-  </ion-content>
-  <div class="card">
-      <ion-icon ios="ios-close-circle" md="md-close-circle" (click)="close()"></ion-icon>
-  
-      <ion-list *ngFor="let item of vendorData">
-          <ion-item>
-              <ion-row>
-                  <ion-col>
-                      <div style="font-size: 13px;opacity: 0.5;">Name</div>
-                          {{item.v_name}}
-                  </ion-col>
-                  <ion-col>
-                      <div style="font-size: 13px;opacity: 0.5;">Phone</div>
-                          {{item.v_phone}}
-                  </ion-col>
-              </ion-row>
-          </ion-item><br>
-      </ion-list>
-  
-  
+</ion-content>
+<div class="card">
+    <ion-icon ios="ios-close-circle" md="md-close-circle" (click)="close()"></ion-icon>
+<div *ngIf="!dataNull">
+    <ion-list *ngFor="let item of vendorData">
+        <ion-item (click)="presentActionSheet(item.v_id)">
+            <ion-row>
+                <ion-col>
+                    <div style="font-size: 13px;opacity: 0.5;">Name</div>
+                        {{item.v_name}}
+                </ion-col>
+                <ion-col>
+                    <div style="font-size: 13px;opacity: 0.5;">Phone</div>
+                        {{item.v_phone}}
+                </ion-col>
+            </ion-row>
+        </ion-item><br>
+    </ion-list>
   </div>
+    <ion-item *ngIf="dataNull">
+      <ion-row>
+          <ion-col style="text-align:center">
+              No task list!!
+          </ion-col>
+      </ion-row>
+  </ion-item>
+
+
+</div>

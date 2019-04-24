@@ -14,12 +14,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'notif.html',
 })
 export class NotifPage {
-
+  myDate: String
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotifPage');
+
+      var d = new Date('June 10'),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+          if(month < '10'){
+            console.log(year+"-"+'0'+month+"-"+day);
+          }else{
+            console.log(year+"-"+month+"-"+day);
+          }
+         
+
+  }
+
+  currentDatr(){
+
+    
   }
 
 }
