@@ -1,0 +1,16 @@
+page-task-list {
+        .detail{
+            white-space: pre-line;
+        }
+        .no-padding {
+            padding: 0px !important;
+        }
+        .item:nth-child(odd){
+            background: #fcad84;
+        }
+        .item:nth-child(even){
+            background: #ffe2d3;
+        }
+    
+
+}

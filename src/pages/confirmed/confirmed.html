@@ -15,16 +15,16 @@
   <div class="card">
       <ion-icon ios="ios-close-circle" md="md-close-circle" (click)="close()"></ion-icon>
   
-      <ion-list *ngFor="let item of tasksData">
+      <ion-list *ngFor="let item of guestData">
           <ion-item>
               <ion-row>
                   <ion-col>
-                      <div style="font-size: 13px;opacity: 0.5;">Title</div>
-                          {{item.t_title}}
+                      <div style="font-size: 13px;opacity: 0.5;">First name</div>
+                          {{item.g_fname}}
                   </ion-col>
                   <ion-col>
-                      <div style="font-size: 13px;opacity: 0.5;">Date</div>
-                          {{item.t_date}}
+                      <div style="font-size: 13px;opacity: 0.5;">phone</div>
+                          {{item.g_phone}}}
                   </ion-col>
               </ion-row>
           </ion-item><br>

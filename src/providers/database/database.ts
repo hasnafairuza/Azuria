@@ -81,6 +81,33 @@ return response;
                .map((response:Response)=> response.json());
       }
 
+      getGuest(){
+        return this.http.get("http://localhost/azuria_db/getGuest.php")
+               .map((response:Response)=> response.json());
+      }
+
+      getVendor(){
+        return this.http.get("http://localhost/azuria_db/getVendor.php")
+               .map((response:Response)=> response.json());
+      }
+      getTaskList(){
+        return this.http.get("http://localhost/azuria_db/getCompleted.php")
+               .map((response:Response)=> response.json());
+      }
+      getBudgetList(){
+        return this.http.get("http://localhost/azuria_db/getBudget.php")
+               .map((response:Response)=> response.json());
+      }
+      getGuestList(){
+        return this.http.get("http://localhost/azuria_db/getConfirmed.php")
+               .map((response:Response)=> response.json());
+      }
+      getVendorList(){
+        return this.http.get("http://localhost/azuria_db/getReserved.php")
+               .map((response:Response)=> response.json());
+      }
+
+
     
 
 }
