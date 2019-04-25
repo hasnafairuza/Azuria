@@ -13,5 +13,15 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+        <div style="text-align:center;font-weight:bold;display: block">Today tasks</div>
+        <hr>
+    <ion-item *ngFor="let item of dataNotificate;let i=index">
+        <ion-row>
+            <ion-col>
+                    {{dataNotificate[i]}}
+            </ion-col>
+        </ion-row>
+    </ion-item>
+</ion-list>
 </ion-content>

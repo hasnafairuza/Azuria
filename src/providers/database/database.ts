@@ -16,10 +16,10 @@ export class DatabaseProvider {
   ip:string;
   constructor(public http: Http) {
     console.log('Hello DatabaseProvider Provider');
-    this.ip = 'localhost';
+    this.ip = 'fitri5820610144.000webhostapp.com';
   }
   addTask(title, type, detail, date){
-var url = "http://"+this.ip+"/azuria_db/addTask.php";
+var url = "http://"+this.ip+"/addTask.php";
 let body = new FormData();
 body.append('title',title);
 body.append('type',type);
@@ -31,7 +31,7 @@ return response;
   }
 
   addTotal(title, type, detail, amount){
-    var url = "http://"+this.ip+"/azuria_db/addTotal.php";
+    var url = "http://"+this.ip+"/addTotal.php";
     let body = new FormData();
     body.append('title',title);
     body.append('type',type);
@@ -43,7 +43,7 @@ return response;
       }
 
       addGuest(fname, lname, sex, detail, phone, email, address){
-        var url = "http://"+this.ip+"/azuria_db/addGuest.php";
+        var url = "http://"+this.ip+"/addGuest.php";
         let body = new FormData();
         body.append('fname',fname);
         body.append('lname',lname);
@@ -58,7 +58,7 @@ return response;
           }
 
      addVendor(name, type, detail, phone, email, address, amount){
-    var url = "http://"+this.ip+"/azuria_db/addVendor.php";
+    var url = "http://"+this.ip+"/addVendor.php";
     let body = new FormData();
     body.append('name',name);
     body.append('type',type);
@@ -73,43 +73,43 @@ return response;
       }
 
       getTask(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getTask.php")
+        return this.http.get("http://"+this.ip+"/getTask.php")
                .map((response:Response)=> response.json());
       }
 
       getTotal(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getTotal.php")
+        return this.http.get("http://"+this.ip+"/getTotal.php")
                .map((response:Response)=> response.json());
       }
 
       getGuest(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getGuest.php")
+        return this.http.get("http://"+this.ip+"/getGuest.php")
                .map((response:Response)=> response.json());
       }
 
       getVendor(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getVendor.php")
+        return this.http.get("http://"+this.ip+"/getVendor.php")
                .map((response:Response)=> response.json());
       }
       getTaskList(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getTaskComplete.php")
+        return this.http.get("http://"+this.ip+"/getTaskComplete.php")
                .map((response:Response)=> response.json());
       }
       getBudgetList(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getBudgetList.php")
+        return this.http.get("http://"+this.ip+"/getBudgetList.php")
                .map((response:Response)=> response.json());
       }
       getGuestList(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getGuestList.php")
+        return this.http.get("http://"+this.ip+"/getGuestList.php")
                .map((response:Response)=> response.json());
       }
       getVendorList(){
-        return this.http.get("http://"+this.ip+"/azuria_db/getVendorList.php")
+        return this.http.get("http://"+this.ip+"/getVendorList.php")
                .map((response:Response)=> response.json());
       }
 
       setTaskComplete(t_id,t_status){
-        var url = "http://"+this.ip+"/azuria_db/setTaskComplete.php";
+        var url = "http://"+this.ip+"/setTaskComplete.php";
         let body = new FormData();
         body.append('t_id',t_id);
         body.append('t_status',t_status);
@@ -118,7 +118,7 @@ return response;
       }
 
       setBudgetUsed(c_id,c_status){
-        var url = "http://"+this.ip+"/azuria_db/setBudgetUsed.php";
+        var url = "http://"+this.ip+"/setBudgetUsed.php";
         let body = new FormData();
         body.append('c_id',c_id);
         body.append('c_status',c_status);
@@ -126,7 +126,7 @@ return response;
         return response;
       }
       setGuestConfirmed(g_id,g_status){
-        var url = "http://"+this.ip+"/azuria_db/setGuestConfirmed.php";
+        var url = "http://"+this.ip+"/setGuestConfirmed.php";
         let body = new FormData();
         body.append('g_id',g_id);
         body.append('g_status',g_status);
@@ -134,7 +134,7 @@ return response;
         return response;
       }
       setVendorReserved(v_id,v_status){
-        var url = "http://"+this.ip+"/azuria_db/setVendorReserved.php";
+        var url = "http://"+this.ip+"/setVendorReserved.php";
         let body = new FormData();
         body.append('v_id',v_id);
         body.append('v_status',v_status);
@@ -143,7 +143,7 @@ return response;
       }
 
       deleteTask(t_id){
-        var url = "http://"+this.ip+"/azuria_db/deleteTask.php";
+        var url = "http://"+this.ip+"/deleteTask.php";
         let body = new FormData();
         body.append('t_id',t_id);
         var response = this.http.post(url,body).map(res=>res.json());
@@ -151,14 +151,14 @@ return response;
       }
 
       deleteBudget(c_id){
-        var url = "http://"+this.ip+"/azuria_db/deleteBudget.php";
+        var url = "http://"+this.ip+"/deleteBudget.php";
         let body = new FormData();
         body.append('c_id',c_id);
         var response = this.http.post(url,body).map(res=>res.json());
         return response;
       }
       deleteGuest(g_id){
-        var url = "http://"+this.ip+"/azuria_db/deleteGuest.php";
+        var url = "http://"+this.ip+"/deleteGuest.php";
         let body = new FormData();
         body.append('g_id',g_id);
         var response = this.http.post(url,body).map(res=>res.json());
@@ -166,7 +166,7 @@ return response;
       }
 
       deleteVendor(v_id){
-        var url = "http://"+this.ip+"/azuria_db/deleteVendor.php";
+        var url = "http://"+this.ip+"/deleteVendor.php";
         let body = new FormData();
         body.append('v_id',v_id);
         var response = this.http.post(url,body).map(res=>res.json());

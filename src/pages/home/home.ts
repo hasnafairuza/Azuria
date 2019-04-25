@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController,ModalController } from 'ionic-angular';
-import { SetDatePage } from '../set-date/set-date';
+import { NavController} from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
@@ -8,20 +8,24 @@ import { SetDatePage } from '../set-date/set-date';
 })
 export class HomePage {
    
-  constructor(public navCtrl: NavController,public modalCtrl: ModalController) {
-    // this.countDown();
+  constructor(public navCtrl: NavController) {
+    
   }
 
-  countDown(){
-    let profileModal = this.modalCtrl.create(SetDatePage, { userId: 8675309 });
-    profileModal.present();
+  ionViewWillEnter(){
+    var date = localStorage.getItem('date');
+    this.countDown(date);
+  }
+
+  countDown(date){
+
     var hicon = '<img src="../../assets/imgs/hi.png" alt="" width="10px" style="top:60px;position: positive;">';
     var hgif = '<img src="../../assets/imgs/wedding.gif" alt="">';
-    var m = "May";
-    var d = "19";
-    var y = "2019";
+    // var m = "May";
+    // var d = "19";
+    // var y = "2019";
 
-    var date = m+" "+d+","+" "+y+" 22:25:00";
+    // var date = m+" "+d+","+" "+y+" 22:25:00";
 
     let countDownDate = new Date(date).getTime();
 

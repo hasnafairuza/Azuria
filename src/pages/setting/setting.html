@@ -6,12 +6,32 @@
 -->
 <ion-header>
   <ion-navbar>
-    <!-- <ion-title>setting</ion-title> -->
+    <ion-title>Setting</ion-title>
     <ion-icon name="refresh" item-start style="font-size: 25px;margin-left: 10px;"></ion-icon>
     <ion-icon name="person" item-end style="margin-left: 320px;font-size: 25px;"></ion-icon>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+        <ion-row (click)="changedate()">
+            <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
+            <div class="menu-text">Setting date of wedding</div>
+        </ion-row>
+    </ion-item>
+    <ion-item>
+        <ion-row (click)="changedate()">
+            <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>
+            <div class="menu-text">About us</div>
+        </ion-row>
+    </ion-item>
+    <ion-item>
+        <ion-row (click)="changedate()">
+            <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <div class="menu-text">Rate us</div>
+        </ion-row>
+    </ion-item>
+</ion-list>
+<div style="text-align:center">Version 1.0</div>
 </ion-content>

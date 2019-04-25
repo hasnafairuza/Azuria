@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App,IonicPage, NavController, NavParams,AlertController,ViewController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the SettingPage page.
@@ -15,11 +17,43 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,
+    public App:App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
+  }
+
+  changedate() {
+    const prompt = this.alertCtrl.create({
+      title: 'Login',
+      message: "Enter a name for this new album you're so keen on adding",
+      inputs: [
+        {
+          name: 'title',
+          placeholder: 'Title',
+          type: 'date'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked',data.title);
+              localStorage.setItem('date',data.title);
+              location.reload();
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 
 }
